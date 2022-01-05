@@ -20,6 +20,9 @@
                             <li class="list-group-item">
                                 {{ $todo->name }}
                                 <a href="/todos/{{ $todo->id }}" class="btn btn-primary btn-sm float-end">View</a>
+                                @if(!$todo->completed)
+                                    <a href="/todos/{{ $todo->id }}/complete" class="btn btn-warning btn-sm float-end mx-2">Complete</a>
+                                @endif
                             </li>
                         @endforeach
                     <ul>
